@@ -32,12 +32,27 @@ public class Dictionary {
         if(this.tab_dicctionary.containsKey(word)){
             return this.tab_dicctionary.get(word).get(0);
         }
+        for(Map.Entry<String, ArrayList<String>> y : this.tab_dicctionary.entrySet()){
+            for (String s:y.getValue()) {
+                if(word.equals(word)){
+                    return y.getKey();
+                }
+            }
+        }
         return  "null" ;
     }
     public ArrayList<String> getMultipleTranslations(String word){
         if(this.tab_dicctionary.containsKey(word)){
            return this.tab_dicctionary.get(word);
         }
-        return  null ;
+        ArrayList<String> resulta = new ArrayList<String>();
+        for(Map.Entry<String, ArrayList<String>> y : this.tab_dicctionary.entrySet()){
+            for (String s:y.getValue()) {
+                if(word.equals(word)){
+                    resulta.add(y.getKey());
+                }
+            }
+        }
+        return  resulta ;
     }
 }

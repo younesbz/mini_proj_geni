@@ -52,4 +52,21 @@ class DictionaryTest {
         assertEquals(dictionary.getMultipleTranslations("bonjour"),test);
 
     }
+    @Test
+    void bidirectionnellestest() {
+        dictionary.addTranslation("bonjour","hi");
+        dictionary.addTranslation("bonjour","olla");
+
+        assertEquals(dictionary.getTranslation("olla"),"bonjour");
+    }
+
+    @Test
+    void multibidirectionnellestest() {
+        dictionary.addTranslation("bonjour","hi");
+        dictionary.addTranslation("olla","hi");
+        ArrayList<String> test = new ArrayList<>();
+        test.add("olla");
+        test.add("bonjour");
+        assertEquals(dictionary.getMultipleTranslations("hi"),test);
+    }
 }
