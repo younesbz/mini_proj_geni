@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Dictionary {
+public class Dictionaryy {
     private HashMap<String, ArrayList<String> > tab_dicctionary ;
     private String name ;
-    public Dictionary( String name){
+    public Dictionaryy(String name){
         this.tab_dicctionary = new HashMap<String, ArrayList<String>>();
         this.name = name ;
     }

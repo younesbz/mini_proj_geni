@@ -1,17 +1,25 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
+import static org.mockito.Mockito.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Dictionary;
 import java.util.Map;
+import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DictionaryTest {
+class DictionaryyTest {
 
-     private Dictionary dictionary ;
+     private Dictionaryy dictionary ;
     @BeforeEach
     public void setUp() throws Exception {
-        dictionary = new Dictionary("english");
+        MockitoAnnotations.initMocks(this);
+        dictionary = new Dictionaryy("english");
     }
 
 
@@ -69,4 +77,7 @@ class DictionaryTest {
         test.add("bonjour");
         assertEquals(dictionary.getMultipleTranslations("hi"),test);
     }
+
+
+
 }
